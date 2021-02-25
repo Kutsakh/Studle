@@ -1,6 +1,6 @@
 using System;
 
-namespace Studle.WEBModels
+namespace Studle.WEB.Models
 {
     public class ErrorViewModel
     {
