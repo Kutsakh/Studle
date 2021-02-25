@@ -5,4 +5,8 @@
         <RootNamespace>Studle.WEB</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Studle.BLL\Studle.BLL.csproj" />
+    </ItemGroup>
+
 </Project>

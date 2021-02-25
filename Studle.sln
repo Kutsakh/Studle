@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.WEB", "Studle.WEB\St
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.DAL", "Studle.DAL\Studle.DAL.csproj", "{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.BLL", "Studle.BLL\Studle.BLL.csproj", "{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
