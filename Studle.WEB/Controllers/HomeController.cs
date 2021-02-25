@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Studle.Models;
+using Studle.WEBModels;
 
-namespace Studle.Controllers
+namespace Studle.WEBControllers
 {
     public class HomeController : Controller
     {

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle", "Studle\Studle.csproj", "{E05A584E-60E9-4F59-B53B-5F9283E69E04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.WEB", "Studle.WEB\Studle.WEB.csproj", "{E05A584E-60E9-4F59-B53B-5F9283E69E04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.DAL", "Studle.DAL\Studle.DAL.csproj", "{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +14,9 @@ Global
 		{E05A584E-60E9-4F59-B53B-5F9283E69E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E05A584E-60E9-4F59-B53B-5F9283E69E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E05A584E-60E9-4F59-B53B-5F9283E69E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
