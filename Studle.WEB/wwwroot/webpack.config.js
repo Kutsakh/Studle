@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     clean: true,
-    path: path.resolve(__dirname, 'dist/pages'),
+    path: path.resolve(__dirname, 'dist', 'pages'),
     filename: '[name].js',
   },
   plugins: [
