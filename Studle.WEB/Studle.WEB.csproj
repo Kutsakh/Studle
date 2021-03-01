@@ -16,4 +16,9 @@
       <ProjectReference Include="..\Studle.BLL\Studle.BLL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+    </ItemGroup>
+
 </Project>

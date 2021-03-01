@@ -2,6 +2,21 @@
     ViewData["Title"] = "Home Page";
 }
 
+@section Head {
+    <link rel="stylesheet" href="~/dist/pages/home.css"/>
+}
+
+@section Scripts {
+    <script>
+        window.__redux_state__ = {
+            counter: {
+                value: 10, 
+            },
+        };
+    </script>
+    <script src="~/dist/pages/home.js"></script>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
