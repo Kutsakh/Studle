@@ -1,10 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.WEB", "Studle.WEB\Studle.WEB.csproj", "{E05A584E-60E9-4F59-B53B-5F9283E69E04}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.218
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studle.WEB", "Studle.WEB\Studle.WEB.csproj", "{E05A584E-60E9-4F59-B53B-5F9283E69E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.DAL", "Studle.DAL\Studle.DAL.csproj", "{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studle.DAL", "Studle.DAL\Studle.DAL.csproj", "{6A9E06B0-3A4C-44E4-BB62-C0B1F21F6C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.BLL", "Studle.BLL\Studle.BLL.csproj", "{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Studle.BLL", "Studle.BLL\Studle.BLL.csproj", "{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Studle.Tests", "Studle.Tests\Studle.Tests.csproj", "{182AD218-9650-4018-95A2-E4E740962E5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +29,15 @@ Global
 		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0B4DB94-0870-4FEA-A7DA-F299AD55AFD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{182AD218-9650-4018-95A2-E4E740962E5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{182AD218-9650-4018-95A2-E4E740962E5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{182AD218-9650-4018-95A2-E4E740962E5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{182AD218-9650-4018-95A2-E4E740962E5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {90AD6FCF-5D3F-4B25-8A22-5A9DD203F35D}
 	EndGlobalSection
 EndGlobal
