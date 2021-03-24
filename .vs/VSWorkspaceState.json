@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Studle.BLL",
+    "\\Studle.DAL",
+    "\\Studle.DAL\\EF",
+    "\\Studle.DAL\\Entities"
+  ],
+  "SelectedNode": "\\Studle.DAL\\Entities\\User.cs",
+  "PreviewInSolutionExplorer": false
+}
