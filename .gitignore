@@ -3,4 +3,10 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+
+# User-specific files
+*.rsuser
 *.suo
+*.user
+*.userosscache
+*.sln.docstates
