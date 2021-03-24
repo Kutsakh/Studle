@@ -1,11 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Studle.BLL",
     "\\Studle.DAL",
+    "\\Studle.DAL\\Abstractions",
     "\\Studle.DAL\\EF",
-    "\\Studle.DAL\\Entities"
+    "\\Studle.DAL\\Entities",
+    "\\Studle.DAL\\Interfaces",
+    "\\Studle.DAL\\Repositories"
   ],
-  "SelectedNode": "\\Studle.DAL\\Entities\\User.cs",
+  "SelectedNode": "\\Studle.DAL\\Repositories\\MarkRepository.cs",
   "PreviewInSolutionExplorer": false
 }
