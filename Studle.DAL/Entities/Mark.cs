@@ -1,11 +1,11 @@
-﻿using System.DateTimeOffset;
+﻿using System;
 using Studle.DAL.Abstractions;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Studle.DAL.Entities
 {
-    class Mark : AbstractEntity
+    public class Mark : AbstractEntity
     {
         [Required]
         public float Point { get; set; }

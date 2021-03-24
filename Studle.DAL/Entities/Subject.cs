@@ -12,7 +12,7 @@ namespace Studle.DAL.Entities
         DiffCredit
     }
 
-    class Subject : AbstractEntity
+    public class Subject : AbstractEntity
     {
         [Required]
         public string Name { get; set; }

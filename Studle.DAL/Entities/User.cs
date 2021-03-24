@@ -31,7 +31,6 @@ namespace Studle.DAL.Entities
 
         [Required]
         [StringLength(255)]
-        [Index(IsUnique = true)]
         public string Email { get; set; }
 
         [Required]

@@ -7,6 +7,10 @@ namespace Studle.DAL.Interfaces
     {
         IRepository<User> Users { get; }
 
+        IRepository<Mark> Marks { get; }
+
+        IRepository<Subject> Subjects { get; }
+
         void Save();
     }
 }
