@@ -9,14 +9,22 @@ namespace Studle.DAL.Repositories
     {
         private readonly AppDbContext _dbContext;
 
-        private bool _disposed;
+        private bool _disposed = false;
         
         public IRepository<User> Users { get; }
+        public IRepository<Mark> Marks { get; }
+        public IRepository<Subject> Subjects { get; }
 
-        public EFUnitOfWork(AppDbContext dbContext, IRepository<User> userRepository)
+        public EFUnitOfWork(
+            AppDbContext dbContext,
+            IRepository<User> userRepository,
+            IRepository<Mark> markRepository,
+            IRepository<Subject> subjectRepository)
         {
             _dbContext = dbContext;
             Users = userRepository;
+            Marks = markRepository;
+            Subjects = subjectRepository;
         }
 
         public void Save()
@@ -31,7 +39,7 @@ namespace Studle.DAL.Repositories
             {
                 _dbContext.Dispose();
             }
-            _disposed = true;
+            this._disposed = true;
         }
 
         public void Dispose()

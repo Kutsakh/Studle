@@ -7,6 +7,10 @@ namespace Studle.DAL.EF
     { 
         public DbSet<User> Users { get; set; }
         
+        public DbSet<Mark> Marks { get; set; }
+
+        public DbSet<Subject> Subjects { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite("Data Source=studle.db");
 
