@@ -12,7 +12,7 @@ namespace Studle.DAL.EF
         public DbSet<Subject> Subjects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("Data Source=studle.db");
+            => options.UseSqlite("FileName=studle.db");
 
         // TODO: update
         // public AppDbContext(string connectionString)

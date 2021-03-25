@@ -1,6 +1,6 @@
 using Studle.DAL.Abstractions;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Studle.DAL.Entities
 
@@ -20,7 +20,6 @@ namespace Studle.DAL.Entities
         [StringLength(255)]
         public string First_name { get; set; }
 
-        [Required]
         [MaxLength(225)]
         public string Middle_name { get; set; }
 
@@ -39,10 +38,12 @@ namespace Studle.DAL.Entities
         [Required]
         public UserType Role { get; set; }
 
-        [Required]
         public int Semester { get; set; }
 
-        [Required]
         public string Cathedra { get; set; }
+
+        [Required]
+        [DefaultValue(false)]
+        public bool Open_access { get; set; }
     }
 }
