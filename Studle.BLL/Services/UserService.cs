@@ -103,7 +103,7 @@ namespace Studle.BLL.Services
                     Cathedra = cathedra,
                     Open_access = false,
                 };
-                Database.Users.Update(user);
+                Database.Users.Create(user);
                 Database.Save();
                 CurrentUser = new UserDTO
                 {
