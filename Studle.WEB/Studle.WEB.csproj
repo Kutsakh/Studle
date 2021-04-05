@@ -16,4 +16,26 @@
       <ProjectReference Include="..\Studle.BLL\Studle.BLL.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\js\site.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\features\counter\Counter.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\features\counter\Counter.module.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\features\counter\counterSlice.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\scripts\build.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\logo192.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\logo512.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\manifest.json" />
+      <_ContentIncludedByDefault Remove="wwwroot\public\robots.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\pages\privacy\reducers\counterReducer.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\pages\sign-in\reducers\counterReducer.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\src\pages\home\reducers\counterReducer.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.4" />
+    </ItemGroup>
+
 </Project>
