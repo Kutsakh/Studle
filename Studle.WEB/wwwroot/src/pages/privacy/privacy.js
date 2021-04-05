@@ -1,3 +1,3 @@
 import '../../sections/header/hader';
 
-import './home.scss';
+import './privacy.scss';
