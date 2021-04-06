@@ -11,6 +11,7 @@ using System.Linq;
 
 namespace Studle.BLL.Services
 {
+    /*
     public class UserService : IUserService
     {
         private IUnitOfWork Database { get; set; }
@@ -245,5 +246,5 @@ namespace Studle.BLL.Services
             return mapper.Map<IEnumerable<User>, List<UserDTO>>(Database.Users.GetAll());
         }
     }
-
+    */
 }

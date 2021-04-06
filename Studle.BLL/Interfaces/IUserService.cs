@@ -11,11 +11,10 @@ namespace Studle.BLL.Interfaces
         UserDTO Login(string email, string password);
         public UserDTO SignUp(string first_name, string last_name, 
                               string email, string password,
-                              UserType role,
+                              UserRole role,
                               string middle_name = null, string cathedra = null);
         bool IsValidMail(string emailaddress);
         UserDTO GetUser(int? Id);
-        void OpenAccess(int? Id);
         void CreateUser(UserDTO userDTO);
         void UpdateUser(UserDTO userDTO);
         void DeleteUser(UserDTO userDTO);

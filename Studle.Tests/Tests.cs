@@ -13,6 +13,7 @@ using HashService = Studle.Tests.Mocks.HashService;
 
 namespace Studle.Tests
 {
+    /*
     public class Tests
     {
         private IUserService userService;
@@ -113,6 +114,6 @@ namespace Studle.Tests
             Assert.Equal(userDto.First_name, resUser.First_name);
             Assert.Equal(userDto.Last_name, resUser.Last_name);
         }
-
     }
+    */
 }
