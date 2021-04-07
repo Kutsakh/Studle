@@ -5,14 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Studle.DAL.Entities
 {
-    public enum SubjectType
-    {
-        exam,
-        credit,
-        diff_credit
-    }
-
-    public class Subject : AbstractEntity
+    public class Group : AbstractEntity
     {
         [Required]
         [MaxLength(30)]
@@ -20,11 +13,11 @@ namespace Studle.DAL.Entities
         public string Name { get; set; }
 
         [Required]
-        public int DurationSemesters { get; set; }
+        public int GroupNumber { get; set; }
 
         [Required]
-        public SubjectType Type { get; set; }
+        public int AdmissionYear { get; set; }
 
-        public List<Group> Groups { get; set; } = new List<Group>();
+        public List<Subject> Subjects { get; set; } = new List<Subject>();
     }
 }

@@ -1,19 +1,17 @@
 using Studle.DAL.Entities;
-    
+using System;
+
 
 namespace Studle.BLL.DTO
 {
     public class UserDTO
     {
         public int Id { get; set; }
-        public string First_name { get; set; }
-        public string Middle_name { get; set; }
-        public string Last_name { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public UserType Role { get; set; }
-        public int Semester { get; set; }
-        public string Cathedra { get; set; }
-        public bool Open_access { get; set; }
+        public UserRole Role { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
     }
 }
