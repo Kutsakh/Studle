@@ -26,9 +26,6 @@ namespace Studle.BLL.Infrastructure
             Bind<IRepository<Mark>>().To<MarkRepository>().InSingletonScope();
             Bind<IRepository<Subject>>().To<SubjectRepository>().InSingletonScope();
 
-            // Bind<IUserService>().To<UserService>().InSingletonScope();
-            // Bind<IMarkService>().To<MarkService>().InSingletonScope();
-            // Bind<ISubjectService>().To<SubjectService>().InSingletonScope();
             Bind<IHashService>().To<HashService>().InSingletonScope();
         }
     }
