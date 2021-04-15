@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Serilog;
 using Studle.WEB.Models;
 
 namespace Studle.WEB.Controllers
@@ -16,11 +17,13 @@ namespace Studle.WEB.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("You requested HomePage");
             return View();
         }
 
         public IActionResult Privacy()
         {
+            _logger.LogInformation("You requested privacy HomePage");
             return View("Privacy");
         }
 
