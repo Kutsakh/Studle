@@ -1,14 +1,19 @@
 ﻿using System;
 
-
 namespace Studle.BLL.Infrastructure
 {
-    class ValidationException: Exception
+    internal class ValidationException : Exception
     {
-        public string Property { get; protected set; }
-        public ValidationException(string message, string prop) : base(message)
+        public ValidationException(string message, string prop)
+            : base(message)
         {
             Property = prop;
+        }
+
+        public string Property
+        {
+            get;
+            protected set;
         }
     }
 }

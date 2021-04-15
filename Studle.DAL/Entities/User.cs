@@ -1,16 +1,16 @@
 using System;
-using Studle.DAL.Abstractions;
 using System.ComponentModel.DataAnnotations;
+using Studle.DAL.Abstractions;
 
 namespace Studle.DAL.Entities
 
 {
     public enum UserRole
     {
-        student,
-        teacher,
-        admin,
-        guest
+        Student,
+        Teacher,
+        Admin,
+        Guest,
     }
 
     public class User : AbstractEntity

@@ -1,23 +1,35 @@
 using System.Collections.Generic;
+using Studle.BLL.Dto;
 using Studle.DAL.Entities;
-using Studle.BLL.DTO;
-
 
 namespace Studle.BLL.Interfaces
 {
     public interface IUserService
     {
-        UserDTO CurrentUser { get; }
-        UserDTO Login(string email, string password);
-        public UserDTO SignUp(string first_name, string last_name, 
-                              string email, string password,
-                              UserRole role,
-                              string middle_name = null, string cathedra = null);
-        bool IsValidMail(string emailaddress);
-        UserDTO GetUser(int? Id);
-        void CreateUser(UserDTO userDTO);
-        void UpdateUser(UserDTO userDTO);
-        void DeleteUser(UserDTO userDTO);
-        IEnumerable<UserDTO> GetUsers();
+        UserDto CurrentUser { get; }
+
+        UserDto Login(string email, string password);
+
+        // TODO: refactor to use dto
+        public UserDto SignUp(
+            string firstName,
+            string lastName,
+            string email,
+            string password,
+            UserRole role,
+            string middleName = null,
+            string cathedra = null);
+
+        bool IsValidMail(string emailAddress);
+
+        UserDto GetUser(int? id);
+
+        void CreateUser(UserDto userDto);
+
+        void UpdateUser(UserDto userDto);
+
+        void DeleteUser(UserDto userDto);
+
+        IEnumerable<UserDto> GetUsers();
     }
 }
