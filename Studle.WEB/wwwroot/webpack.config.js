@@ -1,11 +1,11 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
-const { lstatSync, readdirSync } = require('fs')
+const { lstatSync, readdirSync } = require('fs');
 
-const isDirectory = source => lstatSync(source).isDirectory();
-const getDirectories = source =>
-    readdirSync(source).filter((name) => isDirectory(path.join(source, name)));
+const isDirectory = (source) => lstatSync(source).isDirectory();
+const getDirectories = (source) =>
+  readdirSync(source).filter((name) => isDirectory(path.join(source, name)));
 
 const basePath = path.resolve(__dirname, 'src');
 
@@ -37,8 +37,6 @@ module.exports = {
       filename: '[name].css',
     }),
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./public directory is being served
       host: 'localhost',
       port: 3000,
       open: false,
@@ -47,7 +45,6 @@ module.exports = {
         path.join(__dirname, 'src', '*'),
         path.join(__dirname, '..', 'Views', '*.cshtml'),
       ],
-      // server: { baseDir: ['public'] },
       proxy: 'localhost:5000',
     }),
   ],
@@ -72,13 +69,6 @@ module.exports = {
           {
             loader: 'sass-loader',
           },
-          // {
-          //   loader: 'css-loader',
-          //   options: {
-          //     import: true,
-          //   },
-          // },
-          // 'postcss-loader',
         ],
       },
     ],

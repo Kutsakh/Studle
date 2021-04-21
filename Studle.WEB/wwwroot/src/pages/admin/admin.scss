@@ -1,0 +1,16 @@
+@import "../../styles/general";
+
+.admin {
+}
+
+.sidenav {
+  @media (min-width: 768px) {}
+  
+  &__item {
+    @apply flex items-center px-4 py-2 text-gray-600 transition-colors duration-200 transform hover:bg-gray-200 hover:text-gray-700;
+
+    &--active {
+      @apply bg-gray-200 text-gray-700;
+    }
+  }
+}

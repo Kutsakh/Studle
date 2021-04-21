@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce7b0465-18ef-43f9-b931-5a0a5c97645f" name="Default Changelist" comment="Update webpack config, fix output path.">
-      <change beforePath="$PROJECT_DIR$/Studle.WEB/wwwroot/src/sections/header/hader.js" beforeDir="false" afterPath="$PROJECT_DIR$/Studle.WEB/wwwroot/src/sections/header/hader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Studle/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Studle/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +101,10 @@
       <workItem from="1616766347444" duration="413000" />
       <workItem from="1616841071753" duration="485000" />
       <workItem from="1617620355587" duration="4847000" />
+      <workItem from="1618954739076" duration="558000" />
+      <workItem from="1618963361389" duration="524000" />
+      <workItem from="1618964449521" duration="45000" />
+      <workItem from="1618964694113" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Update webpack config, fix output path.">
       <created>1614616420413</created>
