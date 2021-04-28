@@ -1,16 +1,20 @@
 ﻿using System.Collections.Generic;
-using Studle.BLL.DTO;
-
+using Studle.BLL.Dto;
 
 namespace Studle.BLL.Interfaces
 {
     public interface IMarkService
     {
-        void CreateMark(MarkDTO markDTO);
-        void UpdateMark(MarkDTO markDTO);
-        void DeleteMark(MarkDTO markDTO);
-        MarkDTO GetMark(int? id);
-        IEnumerable<MarkDTO> GetMarks();
-        IEnumerable<MarkDTO> GetMarksByUserId(int? userId);
+        void CreateMark(MarkDto markDto);
+
+        void UpdateMark(MarkDto markDto);
+
+        void DeleteMark(MarkDto markDto);
+
+        MarkDto GetMark(int? id);
+
+        IEnumerable<MarkDto> GetMarks();
+
+        IEnumerable<MarkDto> GetMarksByUserId(int? userId);
     }
 }

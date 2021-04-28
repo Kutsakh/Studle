@@ -1,15 +1,14 @@
-﻿using Studle.DAL.Abstractions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using Studle.DAL.Abstractions;
 
 namespace Studle.DAL.Entities
 {
     public enum SubjectType
     {
-        exam,
-        credit,
-        diff_credit
+        Exam,
+        Credit,
+        DiffCredit,
     }
 
     public class Subject : AbstractEntity
@@ -25,6 +24,6 @@ namespace Studle.DAL.Entities
         [Required]
         public SubjectType Type { get; set; }
 
-        public List<Group> Groups { get; set; } = new List<Group>();
+        public List<Group> Groups { get; set; } = new ();
     }
 }

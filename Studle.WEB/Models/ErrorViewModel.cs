@@ -1,5 +1,3 @@
-using System;
-
 namespace Studle.WEB.Models
 {
     public class ErrorViewModel
