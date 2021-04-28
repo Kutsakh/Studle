@@ -33,7 +33,7 @@ namespace Studle.DAL.Repositories
 
         public IEnumerable<User> GetAll()
         {
-            return _dbContext.Users;
+            return _dbContext.Guests;
         }
 
         public User Get(int id)
@@ -43,7 +43,7 @@ namespace Studle.DAL.Repositories
 
         public void Create(User user)
         {
-            _dbContext.Users.Add(user);
+            _dbContext.Guests.Add(user);
         }
 
         public void Update(User user)
@@ -53,7 +53,7 @@ namespace Studle.DAL.Repositories
 
         public IEnumerable<User> Find(Func<User, bool> predicate)
         {
-            return _dbContext.Users.Where(predicate).ToList();
+            return _dbContext.Guests.Where(predicate).ToList();
         }
 
         public void Delete(int id)
