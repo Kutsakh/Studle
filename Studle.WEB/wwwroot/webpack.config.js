@@ -4,16 +4,12 @@ const path = require('path');
 const { lstatSync, readdirSync } = require('fs');
 
 const isDirectory = (source) => lstatSync(source).isDirectory();
-const getDirectories = (source) =>
-  readdirSync(source).filter((name) => isDirectory(path.join(source, name)));
+const getDirectories = (source) => readdirSync(source).filter((name) => isDirectory(path.join(source, name)));
 
 const basePath = path.resolve(__dirname, 'src');
 
 const getPageEntryPath = (pageName) => {
-  const destination = path.relative(
-    basePath,
-    path.join(__dirname, 'src', 'pages', pageName, `${pageName}.js`),
-  );
+  const destination = path.relative(basePath, path.join(__dirname, 'src', 'pages', pageName, `${pageName}.js`));
   return `./${destination}`;
 };
 
