@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Studle.BLL.Dto;
 using Studle.DAL.Entities;
 
@@ -6,30 +8,14 @@ namespace Studle.BLL.Interfaces
 {
     public interface IUserService
     {
-        UserDto CurrentUser { get; }
+        Task<IdentityResult> SignUpAsync(UserDto user, string password);
 
-        UserDto Login(string email, string password);
+        public Task<SignInResult> SignInAsync(UserDto user, string password, bool isPersistant);
 
-        // TODO: refactor to use dto
-        public UserDto SignUp(
-            string firstName,
-            string lastName,
-            string email,
-            string password,
-            UserRole role,
-            string middleName = null,
-            string cathedra = null);
+        Task<IdentityResult> ChangePasswordAsync(UserDto user, string currentPassword, string newPassword);
 
-        bool IsValidMail(string emailAddress);
+        Task SignOutAsync();
 
-        UserDto GetUser(int? id);
-
-        void CreateUser(UserDto userDto);
-
-        void UpdateUser(UserDto userDto);
-
-        void DeleteUser(UserDto userDto);
-
-        IEnumerable<UserDto> GetUsers();
+        public Task<IdentityResult> AddRole(UserDto user, string role);
     }
 }

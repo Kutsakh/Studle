@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Studle.DAL.Entities;
@@ -6,10 +5,8 @@ using Studle.DAL.Entities;
 namespace Studle.DAL.EF
 {
 
-    public class AppDbContext : IdentityDbContext<WEBUser>
-    {
-        public DbSet<User> Guests { get; set; }
-    
+    public class AppDbContext : IdentityDbContext<User>
+    {    
         public DbSet<Group> Groups { get; set; }
 
         public DbSet<Subject> Subjects { get; set; }
@@ -20,12 +17,22 @@ namespace Studle.DAL.EF
 
         public DbSet<Topic> Topics { get; set; }
 
+        public DbSet<Mark> Marks { get; set; }
+
+        public DbSet<Role> Role { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
 
-        public DbSet<Mark> Marks { get; set; }
+        public AppDbContext()
+        {
+            Database.EnsureDeleted();   // удаляем бд со старой схемой
+            Database.EnsureCreated();
+        }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {

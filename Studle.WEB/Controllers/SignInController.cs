@@ -1,13 +1,49 @@
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using Studle.BLL.Dto;
+using Studle.BLL.Interfaces;
+using Studle.WEB.Models;
+using System.Threading.Tasks;
 
 namespace Studle.WEB.Controllers
 {
     public class SignInController : Controller
     {
-        // GET
-        public IActionResult Index()
+        private IUserService userService;
+
+        public SignInController(IUserService service)
         {
-            return View();
+            this.userService = service;
+        }
+
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<ActionResult> Login(LoginModel model)
+        {
+            if (this.ModelState.IsValid)
+            {
+                UserDto user = new UserDto { Email = model.Email };
+                var result = await this.userService.SignInAsync(user, model.Password, true);
+                if (result?.Succeeded == true)
+                {
+                    Log.Verbose($"Logged in: {0} ", user);
+                    return this.Redirect("/Home/Privacy");
+                }
+                else
+                {
+                    Log.Warning($"Log in failed {0} ", user);
+                }
+
+                return this.Redirect("/Home/Index");
+            }
+
+            return this.View();
         }
     }
 }

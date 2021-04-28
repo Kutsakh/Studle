@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 using Studle.DAL.Abstractions;
 
 namespace Studle.DAL.Entities
@@ -13,30 +15,10 @@ namespace Studle.DAL.Entities
         Guest,
     }
 
-    public class User : AbstractEntity
+    public class User : IdentityUser
     {
         [Required]
-        [MaxLength(30)]
-        [StringLength(255)]
-        public string FirstName { get; set; }
-
-        [Required]
-        [MaxLength(30)]
-        [StringLength(255)]
-        public string LastName { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string Email { get; set; }
-
-        [Required]
-        [StringLength(255)]
-        public string Password { get; set; }
-
-        [Required]
-        public UserRole Role { get; set; }
-
-        [Required]
         public DateTimeOffset CreatedAt { get; set; }
+
     }
 }
