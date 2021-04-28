@@ -6,7 +6,6 @@
     "prepare": "cd ../../ && husky install Studle.WEB/wwwroot/.husky"
   },
   "devDependencies": {
-    "@types/source-map": "0.5.2",
     "autoprefixer": "^10.2.4",
     "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.3.0",

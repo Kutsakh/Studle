@@ -33,7 +33,7 @@ namespace Studle.WEB
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentityCore<WEBUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddIdentityCore<WEBUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<AppDbContext>();
         }
 
