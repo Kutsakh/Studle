@@ -26,24 +26,22 @@ namespace Studle.WEB
             }
             catch (Exception ex)
             {
-
                 Log.Fatal(ex, "The application failed to start correctly");
             }
             finally
             {
                 Log.CloseAndFlush();
             }
-           
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
-                    .UseSerilog()
-                    .ConfigureWebHostDefaults(webBuilder => 
-                    {
-                        webBuilder.UseStartup<Startup>(); 
-                    });
+                .UseSerilog()
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
         }
     }
 }

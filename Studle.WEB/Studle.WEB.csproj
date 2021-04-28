@@ -10,12 +10,17 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Roslyn.Analyzers" Version="1.0.3.4" />
       <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
       <PackageReference Include="Serilog.Enrichers.Environment" Version="2.1.3" />
       <PackageReference Include="Serilog.Enrichers.Process" Version="2.0.1" />
       <PackageReference Include="Serilog.Enrichers.Thread" Version="3.1.0" />
       <PackageReference Include="Serilog.Settings.Configuration" Version="3.1.0" />
       <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.0" />
+      <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
@@ -38,6 +43,10 @@
       <_ContentIncludedByDefault Remove="wwwroot\src\pages\privacy\reducers\counterReducer.js" />
       <_ContentIncludedByDefault Remove="wwwroot\src\pages\sign-in\reducers\counterReducer.js" />
       <_ContentIncludedByDefault Remove="wwwroot\src\pages\home\reducers\counterReducer.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\entries\home.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\entries\home.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\entries\sign-in.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\entries\sign-in.js" />
     </ItemGroup>
 
     <ItemGroup>

@@ -11,66 +11,68 @@ namespace Studle.DAL.Repositories
 {
     public class MarkRepository : IRepository<Mark>
     {
-        private readonly AppDbContext _dbContext;
+        private readonly AppDbContext dbContext;
 
-        private readonly DbSet<Mark> _dbSet;
+        private readonly DbSet<Mark> dbSet;
 
         public MarkRepository(AppDbContext context)
         {
-            this._dbContext = context;
-            _dbSet = _dbContext.Set<Mark>();
+            dbContext = context;
+            dbSet = dbContext.Set<Mark>();
         }
 
         public IEnumerable<Mark> Get()
         {
-            return _dbSet.ToList();
+            return dbSet.ToList();
         }
 
         public IEnumerable<Mark> Get(Func<Mark, bool> predicate)
         {
-            return _dbSet.Where(predicate).ToList();
+            return dbSet.Where(predicate).ToList();
         }
 
         public IEnumerable<Mark> GetAll()
         {
-            return _dbContext.Marks;
+            return dbContext.Marks;
         }
 
         public Mark Get(int id)
         {
-            return _dbSet.FirstOrDefault(x => x.Id == id);
+            return dbSet.FirstOrDefault(x => x.Id == id);
         }
 
         public void Create(Mark mark)
         {
-            _dbContext.Marks.Add(mark);
+            dbContext.Marks.Add(mark);
         }
 
         public void Update(Mark mark)
         {
-            _dbSet.Update(mark);
+            dbSet.Update(mark);
         }
 
         public IEnumerable<Mark> Find(Func<Mark, bool> predicate)
         {
-            return _dbContext.Marks.Where(predicate).ToList();
+            return dbContext.Marks.Where(predicate).ToList();
         }
 
         public void Delete(int id)
         {
-            Mark mark = _dbSet.Find(id);
+            var mark = dbSet.Find(id);
             if (mark != null)
-                _dbSet.Remove(mark);
+            {
+                dbSet.Remove(mark);
+            }
         }
 
         public void Save()
         {
-            _dbContext.SaveChanges();
+            dbContext.SaveChanges();
         }
 
         public async Task SaveAsync()
         {
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }

@@ -1,7 +1,6 @@
-﻿using Studle.DAL.Abstractions;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using Studle.DAL.Abstractions;
 
 namespace Studle.DAL.Entities
 {
@@ -18,6 +17,5 @@ namespace Studle.DAL.Entities
 
         [ForeignKey("GroupId")]
         public Group Group { get; set; }
-
     }
 }
