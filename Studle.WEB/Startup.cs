@@ -9,7 +9,6 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Studle.DAL.EF;
 using Studle.DAL.Entities;
-using AutoMapper;
 using Studle.BLL.Infrastructure;
 using Studle.DAL.Interfaces;
 using Studle.DAL.Repositories;
@@ -32,18 +31,16 @@ namespace Studle.WEB
         {
             services.AddAutoMapper(cfg => cfg.AddProfile(new MapperImpl()));
 
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentityCore<User, Role>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddIdentity<User, Role>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddScoped<IUnitOfWork, EFUnitOfWork>();
             services.AddScoped<IUserService, UserService>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +65,7 @@ namespace Studle.WEB
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
