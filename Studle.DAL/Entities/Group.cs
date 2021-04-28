@@ -1,7 +1,6 @@
-﻿using Studle.DAL.Abstractions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-
+using Studle.DAL.Abstractions;
 
 namespace Studle.DAL.Entities
 {
@@ -18,6 +17,6 @@ namespace Studle.DAL.Entities
         [Required]
         public int AdmissionYear { get; set; }
 
-        public List<Subject> Subjects { get; set; } = new List<Subject>();
+        public List<Subject> Subjects { get; set; } = new ();
     }
 }

@@ -11,66 +11,68 @@ namespace Studle.DAL.Repositories
 {
     public class SubjectRepository : IRepository<Subject>
     {
-        private readonly AppDbContext _dbContext;
+        private readonly AppDbContext dbContext;
 
-        private readonly DbSet<Subject> _dbSet;
+        private readonly DbSet<Subject> dbSet;
 
         public SubjectRepository(AppDbContext context)
         {
-            this._dbContext = context;
-            _dbSet = _dbContext.Set<Subject>();
+            dbContext = context;
+            dbSet = dbContext.Set<Subject>();
         }
 
         public IEnumerable<Subject> Get()
         {
-            return _dbSet.ToList();
+            return dbSet.ToList();
         }
 
         public IEnumerable<Subject> Get(Func<Subject, bool> predicate)
         {
-            return _dbSet.Where(predicate).ToList();
+            return dbSet.Where(predicate).ToList();
         }
 
         public IEnumerable<Subject> GetAll()
         {
-            return _dbContext.Subjects;
+            return dbContext.Subjects;
         }
 
         public Subject Get(int id)
         {
-            return _dbSet.FirstOrDefault(x => x.Id == id);
+            return dbSet.FirstOrDefault(x => x.Id == id);
         }
 
         public void Create(Subject subject)
         {
-            _dbContext.Subjects.Add(subject);
+            dbContext.Subjects.Add(subject);
         }
 
         public void Update(Subject subject)
         {
-            _dbSet.Update(subject);
+            dbSet.Update(subject);
         }
 
         public IEnumerable<Subject> Find(Func<Subject, bool> predicate)
         {
-            return _dbContext.Subjects.Where(predicate).ToList();
+            return dbContext.Subjects.Where(predicate).ToList();
         }
 
         public void Delete(int id)
         {
-            Subject subject = _dbSet.Find(id);
+            var subject = dbSet.Find(id);
             if (subject != null)
-                _dbSet.Remove(subject);
+            {
+                dbSet.Remove(subject);
+            }
         }
 
         public void Save()
         {
-            _dbContext.SaveChanges();
+            dbContext.SaveChanges();
         }
 
         public async Task SaveAsync()
         {
-            await _dbContext.SaveChangesAsync();
+            await dbContext.SaveChangesAsync().ConfigureAwait(false);
         }
     }
 }
