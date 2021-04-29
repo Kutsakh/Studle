@@ -5,7 +5,7 @@ using Studle.DAL.Entities;
 namespace Studle.DAL.EF
 {
 
-    public class AppDbContext : IdentityDbContext<User>
+    public class AppDbContext : IdentityDbContext<User, Role, int>
     {    
         public DbSet<Group> Groups { get; set; }
 

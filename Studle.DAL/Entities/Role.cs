@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Studle.DAL.Entities
 {
-    public class Role : IdentityRole
+    public class Role : IdentityRole<int>
     {
         public Role(string name)
             : base(name)

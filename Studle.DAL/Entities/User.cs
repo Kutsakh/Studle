@@ -15,7 +15,7 @@ namespace Studle.DAL.Entities
         Guest,
     }
 
-    public class User : IdentityUser
+    public class User : IdentityUser<int>
     {
         [Required]
         public DateTimeOffset CreatedAt { get; set; }
