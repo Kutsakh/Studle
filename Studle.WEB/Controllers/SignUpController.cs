@@ -20,14 +20,14 @@ namespace Studle.WEB.Controllers
 
 
         [HttpGet]
-        public IActionResult SignUp()
+        public IActionResult Index()
         {
             return this.View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> SignUp(RegisterModel model)
+        public async Task<ActionResult> Index(RegisterModel model)
         {
             if (this.ModelState.IsValid)
             {

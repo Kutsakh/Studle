@@ -17,14 +17,14 @@ namespace Studle.WEB.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Index()
         {
             return this.View();
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<ActionResult> Login(LoginModel model)
+        public async Task<ActionResult> Index(LoginModel model)
         {
             if (this.ModelState.IsValid)
             {
