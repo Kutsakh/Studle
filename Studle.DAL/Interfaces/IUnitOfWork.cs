@@ -30,5 +30,7 @@ namespace Studle.DAL.Interfaces
         public void Save();
 
         public Task SaveAsync();
+
+
     }
 }

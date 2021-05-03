@@ -22,6 +22,7 @@ namespace Studle.WEB.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            Log.Information("GET in sign up");
             return this.View();
         }
 
@@ -31,11 +32,9 @@ namespace Studle.WEB.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                var firstname = model.UserName.Split(" ")[0];
-                var lastname = model.UserName.Split(" ")[1];
+                Log.Information("ModelState valid");
                 UserDto user = new UserDto {
-                    FirstName = firstname,
-                    LastName = lastname,
+                    UserName = model.UserName,
                     Email = model.Email,
                     CreatedAt = DateTimeOffset.Now,
                 };
@@ -46,7 +45,7 @@ namespace Studle.WEB.Controllers
                     if (result.Succeeded)
                     {
                         Log.Verbose($"Registration user {0} ", user);
-                        return this.Redirect("/Auth/Login");
+                        return this.Redirect("/SignIn/Index");
                     }
 
                 }

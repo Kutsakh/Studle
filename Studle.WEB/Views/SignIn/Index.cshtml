@@ -8,9 +8,6 @@
   <link rel="stylesheet" href="~/dist/pages/sign-in.css" />
 }
 
-@section Scripts {
-  <script src="~/dist/pages/sign-in.js"></script>
-}
 
 @using (Html.BeginForm())
 {
@@ -34,7 +31,7 @@
         </a>
       </p>
     </div>
-    <form class="mt-8 space-y-6" action="#" method="POST">
+    <form class="mt-8 space-y-6" method="POST">
       <input type="hidden" name="remember" value="true">
       <div class="rounded-md shadow-sm -space-y-px">
          @Html.ValidationSummary()

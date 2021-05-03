@@ -26,18 +26,19 @@ namespace Studle.WEB.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<ActionResult> Index(LoginModel model)
         {
+
             if (this.ModelState.IsValid)
             {
                 UserDto user = new UserDto { Email = model.Email };
                 var result = await this.userService.SignInAsync(user, model.Password, true);
                 if (result?.Succeeded == true)
                 {
-                    Log.Verbose($"Logged in: {0} ", user);
+                    Log.Information($"Logged in: {user.Email} ");
                     return this.Redirect("/Home/Privacy");
                 }
                 else
                 {
-                    Log.Warning($"Log in failed {0} ", user);
+                    Log.Warning($"Log in failed {user} ");
                 }
 
                 return this.Redirect("/Home/Index");

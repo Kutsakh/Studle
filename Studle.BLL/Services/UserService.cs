@@ -28,11 +28,12 @@ namespace Studle.BLL.Services
         public async Task<IdentityResult> SignUpAsync(UserDto user, string password)
         {
             var userEntity = mapper.Map<User>(user);
-            userEntity.Id = Convert.ToInt32(Guid.NewGuid());
+            /*Log.Information($"GUID value is: {Guid.NewGuid().ToString()}");
+            userEntity.Id = Convert.ToInt32(Guid.NewGuid());*/
 
 
             var result = await unitOfWork.UserManager.CreateAsync(userEntity, password);
-            Log.Information($"Sign up: {0} ", user);
+            Log.Information($"Sign up: {user} ");
             return result;
         }
 
