@@ -47,14 +47,10 @@ namespace Studle.WEB.Controllers
                         Log.Verbose($"Registration user {0} ", user);
                         return this.Redirect("/SignIn/Index");
                     }
-
-                }
-                else
-                {
-                    Log.Warning($"Registration failed {0} ", user);
                 }
 
-                return this.Redirect("/Home/Index");
+                Log.Warning($"Registration failed {0} ", user);
+                return this.Redirect("/SignUp/Index");
             }
 
             return this.View();

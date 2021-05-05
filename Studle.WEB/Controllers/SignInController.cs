@@ -36,12 +36,9 @@ namespace Studle.WEB.Controllers
                     Log.Information($"Logged in: {user.Email} ");
                     return this.Redirect("/Home/Privacy");
                 }
-                else
-                {
-                    Log.Warning($"Log in failed {user} ");
-                }
 
-                return this.Redirect("/Home/Index");
+                Log.Warning($"Log in failed {user} ");
+                return this.Redirect("/SignIn/Index");
             }
 
             return this.View();

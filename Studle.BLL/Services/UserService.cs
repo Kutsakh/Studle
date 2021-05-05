@@ -28,9 +28,6 @@ namespace Studle.BLL.Services
         public async Task<IdentityResult> SignUpAsync(UserDto user, string password)
         {
             var userEntity = mapper.Map<User>(user);
-            /*Log.Information($"GUID value is: {Guid.NewGuid().ToString()}");
-            userEntity.Id = Convert.ToInt32(Guid.NewGuid());*/
-
 
             var result = await unitOfWork.UserManager.CreateAsync(userEntity, password);
             Log.Information($"Sign up: {user} ");
@@ -65,7 +62,7 @@ namespace Studle.BLL.Services
                 Log.Information($"Signed in: {0} ", user);
                 return result;
             }
-            else Log.Warning($"Email isn`t available: {0} ", user.Email);
+            Log.Warning($"Email isn`t available: {0} ", user.Email);
             return null;
         }
 

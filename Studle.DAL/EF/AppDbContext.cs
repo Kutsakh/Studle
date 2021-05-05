@@ -29,10 +29,9 @@ namespace Studle.DAL.EF
 
         public AppDbContext()
         {
-            Database.EnsureDeleted();   // удаляем бд со старой схемой
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
