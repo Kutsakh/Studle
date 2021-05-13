@@ -8,7 +8,6 @@ namespace Studle.WEB.Models
 {
     public class RegisterModel
     {
-
         [Required]
         public string Email { get; set; }
 

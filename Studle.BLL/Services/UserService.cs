@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
@@ -29,6 +31,11 @@ namespace Studle.BLL.Services
             var result = await unitOfWork.UserManager.CreateAsync(userEntity, password);
             Log.Information($"Sign up: {user} ");
             return result;
+        }
+
+        public List<User> GetUsers()
+        {
+            return unitOfWork.UserManager.Users.ToList();
         }
 
         public async Task<IdentityResult> AddRole(UserDto user, string role)

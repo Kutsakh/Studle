@@ -31,7 +31,6 @@ namespace Studle.BLL.Infrastructure
 
             CreateMap<Topic, TopicDto>()
                 .ReverseMap();
-
         }
     }
 }

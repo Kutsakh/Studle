@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Studle.BLL.Dto;
+using Studle.DAL.Entities;
 
 namespace Studle.BLL.Interfaces
 {
@@ -9,6 +11,8 @@ namespace Studle.BLL.Interfaces
         Task<IdentityResult> SignUpAsync(UserDto user, string password);
 
         public Task<SignInResult> SignInAsync(UserDto user, string password, bool isPersistant);
+
+        public List<User> GetUsers();
 
         Task<IdentityResult> ChangePasswordAsync(UserDto user, string currentPassword, string newPassword);
 
