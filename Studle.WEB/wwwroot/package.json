@@ -31,7 +31,6 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
     "el-transition": "^0.0.7",
     "yup": "^0.32.9"
   },
