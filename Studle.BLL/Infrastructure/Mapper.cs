@@ -20,7 +20,7 @@ namespace Studle.BLL.Infrastructure
             CreateMap<SubjectType, SubjectDto>()
                 .ReverseMap();
 
-            CreateMap<Role, RoleDTO>()
+            CreateMap<Role, RoleDto>()
                 .ReverseMap();
 
             CreateMap<Teacher, TeacherDto>()
