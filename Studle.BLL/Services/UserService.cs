@@ -1,3 +1,5 @@
+using System;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Serilog;
@@ -5,11 +7,6 @@ using Studle.BLL.Dto;
 using Studle.BLL.Interfaces;
 using Studle.DAL.Entities;
 using Studle.DAL.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Studle.BLL.Services
 {

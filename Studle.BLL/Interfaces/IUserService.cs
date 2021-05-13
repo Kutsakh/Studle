@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Studle.BLL.Dto;
-using Studle.DAL.Entities;
 
 namespace Studle.BLL.Interfaces
 {

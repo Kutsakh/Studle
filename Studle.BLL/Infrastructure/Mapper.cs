@@ -1,11 +1,6 @@
 using AutoMapper;
 using Studle.BLL.Dto;
 using Studle.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Studle.BLL.Infrastructure
 {
@@ -25,7 +20,7 @@ namespace Studle.BLL.Infrastructure
             CreateMap<SubjectType, SubjectDto>()
                 .ReverseMap();
 
-            CreateMap<Role, RoleDto>()
+            CreateMap<Role, RoleDTO>()
                 .ReverseMap();
 
             CreateMap<Teacher, TeacherDto>()
