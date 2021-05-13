@@ -1,9 +1,19 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Studle.DAL.EF;
+using Studle.DAL.Entities;
+using Studle.BLL.Infrastructure;
+using Studle.DAL.Interfaces;
+using Studle.DAL.Repositories;
+using Studle.BLL.Interfaces;
+using Studle.BLL.Services;
 
 namespace Studle.WEB
 {
@@ -19,6 +29,17 @@ namespace Studle.WEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(cfg => cfg.AddProfile(new MapperImpl()));
+
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<User, Role>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            services.AddScoped<IUnitOfWork, EFUnitOfWork>();
+            services.AddScoped<IUserService, UserService>();
+
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
@@ -44,6 +65,7 @@ namespace Studle.WEB
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

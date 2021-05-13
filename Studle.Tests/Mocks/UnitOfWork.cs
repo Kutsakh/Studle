@@ -1,9 +1,9 @@
-﻿using Studle.DAL.Entities;
+using Studle.DAL.Entities;
 using Studle.DAL.Interfaces;
 
 namespace Studle.Tests.Mocks
 {
-    public sealed class UnitOfWork : IUnitOfWork
+    /*public sealed class UnitOfWork : IUnitOfWork
     {
         public UnitOfWork()
         {
@@ -27,5 +27,5 @@ namespace Studle.Tests.Mocks
         public void Dispose()
         {
         }
-    }
+    }*/
 }

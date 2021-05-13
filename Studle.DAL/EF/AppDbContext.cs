@@ -1,12 +1,11 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Studle.DAL.Entities;
 
 namespace Studle.DAL.EF
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User, Role, int>
     {
-        public DbSet<User> Users { get; set; }
-
         public DbSet<Group> Groups { get; set; }
 
         public DbSet<Subject> Subjects { get; set; }
@@ -19,6 +18,20 @@ namespace Studle.DAL.EF
 
         public DbSet<Mark> Marks { get; set; }
 
+        public DbSet<Role> Role { get; set; }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
+
+        public AppDbContext()
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite("FileName=studle.db");
@@ -26,6 +39,7 @@ namespace Studle.DAL.EF
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Group>()
                 .HasMany(c => c.Subjects)
                 .WithMany(s => s.Groups)

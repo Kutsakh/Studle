@@ -22,7 +22,6 @@ namespace Studle.BLL.Infrastructure
             Bind<IUnitOfWork>().To<EFUnitOfWork>().InSingletonScope();
             Bind<AppDbContext>().ToSelf().InSingletonScope().WithConstructorArgument(connectionString);
 
-            Bind<IRepository<User>>().To<UserRepository>().InSingletonScope();
             Bind<IRepository<Mark>>().To<MarkRepository>().InSingletonScope();
             Bind<IRepository<Subject>>().To<SubjectRepository>().InSingletonScope();
 
